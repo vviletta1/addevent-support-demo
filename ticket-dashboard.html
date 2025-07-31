@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Support Ticket Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <main>
+    <h1>📊 Support Ticket Dashboard</h1>
+    <p>This dashboard shows trends from recent support tickets to identify where developers need the most help.</p>
+
+    <canvas id="ticketTypeChart" width="400" height="200"></canvas>
+    <canvas id="ticketStatusChart" width="400" height="200" style="margin-top: 3rem;"></canvas>
+  </main>
+
+  <footer>
+    <p>Created by Violetta Basden | Developer Support Project | 2025</p>
+  </footer>
+
+  <script>
+    fetch('./data/ticket-data.json')
+      .then(res => res.json())
+      .then(data => {
+        const typeCounts = {};
+        const statusCounts = {};
+
+        data.forEach(ticket => {
+          typeCounts[ticket.type] = (typeCounts[ticket.type] || 0) + 1;
+          statusCounts[ticket.status] = (statusCounts[ticket.status] || 0) + 1;
+        });
+
+        const renderChart = (ctxId, labels, values, title) => {
+          const ctx = document.getElementById(ctxId).getContext('2d');
+          new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: labels,
+              datasets: [{
+                label: title,
+                data: values,
+                backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+              }]
+            },
+            options: {
+              responsive: true,
+              scales: {
+                y: { beginAtZero: true }
+              }
+            }
+          });
+        };
+
+        renderChart('ticketTypeChart', Object.keys(typeCounts), Object.values(typeCounts), 'Tickets by Type');
+        renderChart('ticketStatusChart', Object.keys(statusCounts), Object.values(statusCounts), 'Tickets by Status');
+      })
+      .catch(error => {
+        console.error("Error loading ticket data:", error);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chatbot Review – Developer Support</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>🤖 Chatbot Quality Review Log</h1>
+    <p>This log highlights examples where a chatbot handling developer support failed to provide helpful responses. Each entry includes the original user message, the bot's reply, the issue identified, and a suggested fix.</p>
+
+    <table border="1" cellpadding="10">
+      <thead>
+        <tr>
+          <th>User Message</th>
+          <th>Bot Response</th>
+          <th>Issue</th>
+          <th>Suggested Fix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>“How can I send reminders with the API?”</td>
+          <td>“Please check your email settings in your account.”</td>
+          <td>Bot misunderstood – user was asking about automation, not settings.</td>
+          <td>Update chatbot to recognize "reminders" as an API topic and suggest scheduling email reminders via the API.</td>
+        </tr>
+        <tr>
+          <td>“How do I let users RSVP to events?”</td>
+          <td>“Our system supports multiple time zones.”</td>
+          <td>Irrelevant response – doesn't address RSVP.</td>
+          <td>Add conditional logic to suggest event registration forms or RSVP API features when “RSVP” is mentioned.</td>
+        </tr>
+        <tr>
+          <td>“Where do I put the script for the add-to-calendar button?”</td>
+          <td>“You can style your button with CSS.”</td>
+          <td>Bot skipped the key question – user needed installation help, not styling.</td>
+          <td>Prioritize including the base script tag and setup guide when user asks about setup.</td>
+        </tr>
+        <tr>
+          <td>“Can I embed a calendar in my app?”</td>
+          <td>“We help users add events to their personal calendars.”</td>
+          <td>Partial match – didn’t address the app integration directly.</td>
+          <td>Clarify that developers can use iFrame or widget embed and provide link to widget setup doc.</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p>Created by Violetta Basden | Developer Support Project | 2025</p>
+  </footer>
+</body>
+</html>

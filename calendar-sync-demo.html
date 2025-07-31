@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calendar Integration Simulation</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #eventResult {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #f4f4f4;
+      border-left: 5px solid #3498db;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>📅 Calendar Integration Simulation</h1>
+    <p>This simulates how a developer might generate an event and give users calendar links using the AddEvent API.</p>
+
+    <button id="createEventBtn">Simulate API Event Creation</button>
+
+    <div id="eventResult"></div>
+  </main>
+
+  <footer>
+    <p>Created by Violetta Basden | Developer Support Project | 2025</p>
+  </footer>
+
+  <script>
+    const eventData = {
+      title: "AI in Support: Live Webinar",
+      date: "2025-09-10T18:00:00Z",
+      link: "https://addevent.com/event/AI123",
+      added_to: ["Google Calendar", "Outlook", "Apple Calendar"]
+    };
+
+    document.getElementById('createEventBtn').addEventListener('click', () => {
+      const container = document.getElementById('eventResult');
+      container.innerHTML = `
+        <h3>✅ Event Created</h3>
+        <p><strong>Title:</strong> ${eventData.title}</p>
+        <p><strong>Date:</strong> ${new Date(eventData.date).toLocaleString()}</p>
+        <p><strong>Calendar Options:</strong></p>
+        <ul>
+          ${eventData.added_to.map(service => `<li>${service}</li>`).join("")}
+        </ul>
+        <a href="${eventData.link}" target="_blank">View Event Page</a>
+      `;
+    });
+  </script>
+</body>
+</html>

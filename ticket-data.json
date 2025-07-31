@@ -1,0 +1,11 @@
+[
+  { "type": "API", "status": "Open" },
+  { "type": "Integration", "status": "Resolved" },
+  { "type": "Calendar Sync", "status": "Escalated" },
+  { "type": "Email Link", "status": "Open" },
+  { "type": "API", "status": "Resolved" },
+  { "type": "Calendar Sync", "status": "Resolved" },
+  { "type": "API", "status": "Escalated" },
+  { "type": "Email Link", "status": "Resolved" },
+  { "type": "Integration", "status": "Open" }
+]

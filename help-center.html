@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Help Center – Developer Support</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>📚 Developer Help Center</h1>
+    <p>Welcome to the Developer Help Center. Below are helpful guides for using AddEvent’s tools as a developer—whether you're embedding a calendar button, sending event invites via email, or integrating with the API.</p>
+
+    <section>
+      <h2>🖱️ Add-to-Calendar Button for Your Website</h2>
+      <p>This button lets users add events to their calendars directly from your site—works with Google Calendar, Outlook, Apple, and more.</p>
+      <h4>Basic Setup:</h4>
+      <pre><code>
+&lt;div title="Add to Calendar" class="addeventatc"&gt;
+  Add to Calendar
+  &lt;span class="start"&gt;2025-08-15 10:00:00&lt;/span&gt;
+  &lt;span class="end"&gt;2025-08-15 11:00:00&lt;/span&gt;
+  &lt;span class="timezone"&gt;America/New_York&lt;/span&gt;
+  &lt;span class="title"&gt;Demo Event&lt;/span&gt;
+  &lt;span class="location"&gt;Online&lt;/span&gt;
+&lt;/div&gt;
+      </code></pre>
+      <p>Don’t forget to include AddEvent’s script in your HTML so the button functions correctly.</p>
+    </section>
+
+    <section>
+      <h2>📧 Add-to-Calendar Links for Email</h2>
+      <p>Want users to save your event straight from an email? You can generate unique calendar links and drop them into your email campaigns.</p>
+      <p>Just create the event using your AddEvent dashboard and copy the platform-specific links (Google, Outlook, etc.). Paste them directly into your email content like this:</p>
+      <pre><code>
+<a href="https://www.addevent.com/event/example">Add this event to your calendar</a>
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>⚙️ Using the AddEvent API</h2>
+      <p>AddEvent offers a powerful API for creating and managing events programmatically.</p>
+      <h4>What You Can Do:</h4>
+      <ul>
+        <li>Create events dynamically via your own backend</li>
+        <li>Send calendar invites or reminders via email</li>
+        <li>Manage RSVP lists and attendee data</li>
+        <li>Sync with personal calendars (Google, Outlook, etc.)</li>
+        <li>Create branded event registration forms</li>
+      </ul>
+
+      <h4>Example API Request:</h4>
+      <pre><code>
+// POST /api/v2/events
+{
+  "title": "Launch Party",
+  "start": "2025-09-01T18:00:00Z",
+  "end": "2025-09-01T19:30:00Z",
+  "location": "Zoom",
+  "timezone": "America/New_York",
+  "description": "Join us for our official launch event!"
+}
+      </code></pre>
+      <p>This request would create a new event using the API. You’ll need an API key in the headers and proper authentication.</p>
+    </section>
+
+    <section>
+      <h2>🔁 Common Use Cases for the API</h2>
+      <ul>
+        <li>Auto-adding appointments to user calendars from a booking form</li>
+        <li>Sending custom reminders before live webinars</li>
+        <li>Embedding personalized calendar links in confirmation emails</li>
+        <li>Creating events in bulk from a CMS or admin dashboard</li>
+      </ul>
+      <p>Even if you're new to APIs, AddEvent keeps it straightforward. And if you ever get stuck, we're here to help troubleshoot.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Created by Violetta Basden | Developer Support Project | 2025</p>
+  </footer>
+</body>
+</html>
